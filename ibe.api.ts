@@ -278,7 +278,7 @@ module IBE.Http {
             }
 
             if (typeof angular != "undefined") {
-                throw "angular not supported yet as an Http library. Please contact development.";
+                throw "AngularJS not supported yet as an Http library. Please contact development.";
             }
 
             throw "Http libraries not found. jQuery and Angular currently supported.";
@@ -418,15 +418,8 @@ module IBE.Api {
 		}
 
 		private makeUrl(req: HttpRequest, url: Uri) {
-
 			req.addHeader("Access-Control-Allow-Origin", this.baseUrl);
-			//req.Url = this.baseUrl + url;
-            req.Url = url;
-			//if (this.baseUrl == null || this.baseUrl == "") {
-			//	req.Url = url;
-			//} else {
-			//	req.Url = this.baseUrl + url;
-			//}
+			req.Url = url;
 		}
 
 		getRequest(url: Uri): Http.HttpRequest {
